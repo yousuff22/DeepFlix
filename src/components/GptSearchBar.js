@@ -79,8 +79,8 @@ const GptSearchBar = () => {
       {
         method: "POST",
         headers: {
-          Authorization:
-            "Bearer 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",
+          "Authorization":
+            "Bearer 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",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -93,6 +93,8 @@ const GptSearchBar = () => {
     if (!response.choices) {}
     
     const data = await response.json();
+    console.log(data);
+    
     const deepMovies = data.choices[0].message.content.split(",");
 
     const promiseArray = deepMovies.map((movie) => searchMovieTMDB(movie));
