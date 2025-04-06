@@ -56,7 +56,7 @@ const GptSearchBar = () => {
         method: "POST",
         headers: {
           Authorization:
-            "Bearer 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",
+            "Bearer " + process.env.API_URL,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
