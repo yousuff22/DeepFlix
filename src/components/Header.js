@@ -8,14 +8,16 @@ import { useNavigate } from "react-router";
 import { addUser, removeUser } from "../utils/userSlice";
 import { NetflixLOGO } from "../utils/constants";
 import { userLOGO } from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { toggleGptSearchView, toggleDeepseek } from "../utils/gptSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const dispatch2 = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+  const showDeepseek = useSelector((store) => store.gpt.showDeepseek);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {})
@@ -44,6 +46,10 @@ export const Header = () => {
     dispatch(toggleGptSearchView());
   };
 
+  const handleDeepseekChick = () => {
+    dispatch2(toggleDeepseek());
+  };
+
   return (
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10">
       <div className="flex justify-between items-center">
@@ -59,6 +65,12 @@ export const Header = () => {
                 <option>Spanish</option>
               </select>
             )}
+            <button
+              className="p-2 mx-2 bg-red-800 text-white rounded-md cursor-pointer font-bold"
+              onClick={handleDeepseekChick}
+            >
+              {showDeepseek ? "Homepage" : "DeepSeek"}
+            </button>
             <button
               className="p-2 mx-2 bg-purple-800 text-white rounded-md cursor-pointer font-bold"
               onClick={handleGPTSearchClick}

@@ -22,30 +22,6 @@ const GptSearchBar = () => {
 
   const searchText = useRef(null);
 
-  // const handlGPTSearchClick2 = async (e) => {
-  //   e.preventDefault();
-  //   const response = await fetch(
-  //     "https://openrouter.ai/api/v1/chat/completions",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         Authorization:
-  //           "Bearer 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",
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify({
-  //         model: "openai/gpt-3.5-turbo",
-  //         messages: [{ role: "user", content: DeepSeekQuery }],
-  //       }),
-  //     }
-  //   );
-
-  //   if(!response.choices) {}
-
-  //   const data = await response.json();
-  //   console.log(data.choices[0].message.content);
-  // };
-
   const searchMovieTMDB = async (movie) => {
     const options = {
       method: "GET",
@@ -79,8 +55,8 @@ const GptSearchBar = () => {
       {
         method: "POST",
         headers: {
-          "Authorization":
-            "Bearer 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",
+          Authorization:
+            "Bearer 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",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -90,11 +66,12 @@ const GptSearchBar = () => {
       }
     );
 
-    if (!response.choices) {}
-    
+    if (!response.choices) {
+    }
+
     const data = await response.json();
     console.log(data);
-    
+
     const deepMovies = data.choices[0].message.content.split(",");
 
     const promiseArray = deepMovies.map((movie) => searchMovieTMDB(movie));
@@ -106,7 +83,10 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="pt-[10%] flex justify-center ">
+    <div className="pt-[10%] flex flex-col items-center">
+      <h1 className="text-4xl font-bold text-white mb-8 text-center">
+        Movie Recommendation System
+      </h1>
       <form
         className="w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
@@ -114,7 +94,7 @@ const GptSearchBar = () => {
         <input
           ref={searchText}
           type="text"
-          className=" p-4 m-4 bg-white rounded-lg col-span-9"
+          className="p-4 m-4 bg-white rounded-lg col-span-9"
           placeholder={lang.en.gptSearchPlaceholder}
         />
         <button
