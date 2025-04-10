@@ -5,13 +5,15 @@ import { Netflix_bgIMG } from "../utils/Netflix";
 
 const GptSearch = () => {
   return (
-    <div>
+    <>
       <div className=" fixed -z-10">
-        <img src={Netflix_bgIMG} />
+        <img className="w-full h-screen object-cover sm:h-auto" src={Netflix_bgIMG} />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 

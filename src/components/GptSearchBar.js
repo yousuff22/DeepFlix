@@ -55,8 +55,7 @@ const GptSearchBar = () => {
       {
         method: "POST",
         headers: {
-          "Authorization":
-            "Bearer " + process.env.API_URL,
+          Authorization: "Bearer " + process.env.API_URL,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -83,12 +82,13 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="pt-[10%] flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-white mb-8 text-center">
+    <div className="pt-[35%] md:pt-[10%] flex flex-col items-center">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
         Movie Recommendation System
       </h1>
+
       <form
-        className="w-1/2 bg-black grid grid-cols-12"
+        className="w-full md:w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
