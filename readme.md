@@ -1,4 +1,4 @@
-# Netflix GPT
+# DeepFlix
 
 # Done
 
