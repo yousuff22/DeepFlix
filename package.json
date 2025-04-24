@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "This is a React Project",
   "scripts": {
-  "test": "jest",
-  "start": "parcel index.html",
-  "build": "parcel build index.html --dist-dir dist"
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir dist"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,11 @@
   "homepage": "https://github.com/Yousuf-22/NetfixGPT#readme",
   "devDependencies": {
     "@reduxjs/toolkit": "^2.6.1",
+    "@tailwindcss/postcss": "^4.1.4",
     "parcel": "^2.14.2",
     "react-router-dom": "^7.4.0"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.0.15",
     "axios": "^1.8.4",
     "buffer": "^6.0.3",
     "dotenv": "^16.4.7",
@@ -36,8 +36,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
-    "redux": "^5.0.1",
     "react-router-dom": "^7.4.1",
+    "redux": "^5.0.1",
     "tailwindcss": "^4.0.15"
   }
 }
