@@ -20,8 +20,7 @@ const Deepseek = () => {
         {
           method: "POST",
           headers: {
-            "Authorization":
-              "Bearer " + process.env.API_URL,
+            Authorization: "Bearer " + process.env.APL_URL,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
