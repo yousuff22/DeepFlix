@@ -122,9 +122,24 @@ GitHub | LinkedIn
 # 📃 License
 This project is open-source and available under the MIT License.
 
-
-
-
+# Testing
+1. Unit Testing & Integration Testing
+     - Component Testing
+     - Jest & JS DOM
+     - Testing Library / React Testing Library
+       
+2. Automation Testing
+   - E2E Testing
+   - Tools: Puppeteer, Cypress, Selenium
+     
+3. A/B Testing
+   - Split Testing / Bucket Testing
+     
+4. Performance Testing
+   - Tools: LightHouse, PageSpeed Insight
+     
+5. Test Driven Development
+   - Red - Green - Refactor
 
 
 
